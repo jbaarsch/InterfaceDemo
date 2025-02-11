@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Circle implements Moveable{
+public class Circle implements MoveableIcon{
     int x;
     int y;
     int width;
@@ -52,5 +52,20 @@ public class Circle implements Moveable{
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    @Override
+    public void paintIcon(Component c, Graphics g, int x, int y) {
+        paint(g);
+    }
+
+    @Override
+    public int getIconWidth() {
+        return 0;
+    }
+
+    @Override
+    public int getIconHeight() {
+        return 0;
     }
 }

@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Box implements Moveable{
+public class Box implements MoveableIcon{
     int x;
     int y;
     int width;
@@ -38,19 +38,26 @@ public class Box implements Moveable{
         this.y = y;
     }
 
-    public int getWidth() {
-        return width;
-    }
-
     public void setWidth(int width) {
         this.width = width;
     }
 
-    public int getHeight() {
-        return height;
-    }
-
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    @Override
+    public void paintIcon(Component c, Graphics g, int x, int y) {
+        paint(g);
+    }
+
+    @Override
+    public int getIconWidth() {
+        return width;
+    }
+
+    @Override
+    public int getIconHeight() {
+        return height;
     }
 }

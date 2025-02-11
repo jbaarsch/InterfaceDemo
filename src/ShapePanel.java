@@ -9,17 +9,18 @@ public class ShapePanel extends JPanel {
     final int circDY = -10;
     Box box;
     Circle circle;
-    Moveable[] movers;
+    MoveableIcon[] movers;
     JButton button;
     public ShapePanel() {
-        movers = new Moveable[2];
+        movers = new MoveableIcon[3];
          movers[0] = new Box(250, 250, 30, 30);
          movers[1] = new Circle(250, 250, 30, 30);
+         movers[2] = new Penguin(100, 100);
         this.setPreferredSize(new Dimension(500, 500));
 
         button = new JButton("MOVE SHAPE");
         button.addActionListener( e-> {
-            for (Moveable mover : movers){
+            for (MoveableIcon mover : movers){
                 mover.move((int)(Math.random()*20) - 10, (int)(Math.random()*20) - 10);
             }
 
@@ -38,8 +39,8 @@ public class ShapePanel extends JPanel {
         super.paintComponent(g);
 
         g.setColor(Color.BLACK);
-        for (Moveable mover : movers){
-            mover.paint(g);
+        for (MoveableIcon mover : movers){
+            mover.paintIcon(this, g, 0,0);
         }
 
 

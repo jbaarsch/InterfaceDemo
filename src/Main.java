@@ -8,7 +8,7 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 300);
 
-        frame.getContentPane().add(new ShapePanel());
+        frame.getContentPane().add(new AntarcticaPanel());
         frame.pack();
 
         frame.setVisible(true);
