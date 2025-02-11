@@ -48,6 +48,7 @@ public class Box implements MoveableIcon{
 
     @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
+
         paint(g);
     }
 

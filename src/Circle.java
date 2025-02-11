@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Circle implements MoveableIcon{
+public class Circle implements MoveableIcon, Comparable<Circle>{
     int x;
     int y;
     int width;
@@ -38,17 +38,11 @@ public class Circle implements MoveableIcon{
         this.y = y;
     }
 
-    public int getWidth() {
-        return width;
-    }
 
     public void setWidth(int width) {
         this.width = width;
     }
 
-    public int getHeight() {
-        return height;
-    }
 
     public void setHeight(int height) {
         this.height = height;
@@ -61,11 +55,16 @@ public class Circle implements MoveableIcon{
 
     @Override
     public int getIconWidth() {
-        return 0;
+        return width;
     }
 
     @Override
     public int getIconHeight() {
-        return 0;
+        return height;
+    }
+
+    @Override
+    public int compareTo(Circle o) {
+        return (width * height) - (o.width * o.width);
     }
 }
